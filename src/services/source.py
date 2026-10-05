@@ -1,4 +1,6 @@
 from abc import ABC, abstractmethod
+from lorem import get_paragraph
+
 from models import Novel, NovelContent, Chapter
 
 
@@ -58,12 +60,30 @@ class MockSource(BaseSource):
     }
 
     CHAPTER_CONTENTS = {
-        ("novel_1", "chapter_1"): "Novel 1 Chapter 1 Content",
-        ("novel_1", "chapter_2"): "Novel 1 Chapter 2 Content",
-        ("novel_2", "chapter_1"): "Novel 2 Chapter 1 Content",
-        ("novel_2", "chapter_2"): "Novel 2 Chapter 2 Content",
-        ("novel_3", "chapter_1"): "Novel 3 Chapter 1 Content",
-        ("novel_3", "chapter_2"): "Novel 3 Chapter 2 Content",
+        (
+            "novel_1",
+            "chapter_1",
+        ): f"Novel 1 Chapter 1 {get_paragraph(word_range=(50, 100))}",
+        (
+            "novel_1",
+            "chapter_2",
+        ): f"Novel 1 Chapter 2 {get_paragraph(word_range=(50, 100))}",
+        (
+            "novel_2",
+            "chapter_1",
+        ): f"Novel 2 Chapter 1 {get_paragraph(word_range=(50, 100))}",
+        (
+            "novel_2",
+            "chapter_2",
+        ): f"Novel 2 Chapter 2 {get_paragraph(word_range=(50, 100))}",
+        (
+            "novel_3",
+            "chapter_1",
+        ): f"Novel 3 Chapter 1 {get_paragraph(word_range=(50, 100))}",
+        (
+            "novel_3",
+            "chapter_2",
+        ): f"Novel 3 Chapter 2 {get_paragraph(word_range=(50, 100))}",
     }
 
     def list_novels(self) -> list[Novel]:
