@@ -3,6 +3,7 @@ from dataclasses import dataclass
 
 @dataclass
 class Novel:
+    source: str
     id: str
     title: str
 
@@ -15,5 +16,7 @@ class NovelContent(Novel):
 
 @dataclass
 class Chapter:
+    source: str
+    novel_id: str
     id: str
     title: str
